@@ -1,0 +1,307 @@
+@import "variables";
+
+/*!
+Theme Name: customwritingonline UX
+Author: OlgaX by Production
+*/
+
+/*FONTs
+-------------------------------------------------*/
+/*ROBOTO 300*/
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/roboto-light-webfont.eot');
+    src: url('fonts/roboto-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/roboto-light-webfont.woff2') format('woff2'),
+         url('fonts/roboto-light-webfont.woff') format('woff'),
+         url('fonts/roboto-light-webfont.ttf') format('truetype'),
+         url('fonts/roboto-light-webfont.svg#robotolight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/*ROBOTO 400*/
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/roboto-regular-webfont.eot');
+    src: url('fonts/roboto-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/roboto-regular-webfont.woff2') format('woff2'),
+         url('fonts/roboto-regular-webfont.woff') format('woff'),
+         url('fonts/roboto-regular-webfont.ttf') format('truetype'),
+         url('fonts/roboto-regular-webfont.svg#robotoregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*ET-LINE-ICONS icons*/
+@import (inline) 'include/libs/et-line-icons.css';
+
+/*FONTELLO icons*/
+@import (inline) 'include/libs/fontello.css';
+
+/*PLUGINS
+-------------------------------------------------*/
+/*owl.carousel plugin*/
+@import (inline) "include/libs/owl.carousel.css";
+@import (inline) "include/libs/owl.transitions.css";
+@import (inline) "include/libs/owl.theme.css";
+
+/*COMMON RULES
+-------------------------------------------------*/
+@import "include/common";
+
+/*TYPOGRAPHY
+-------------------------------------------------*/
+@import "include/typography";
+
+/*BUTTONS
+-------------------------------------------------*/
+@import "include/buttons";
+
+/*HEADER
+-------------------------------------------------*/
+@import "include/header";
+
+/*FOOTER
+-------------------------------------------------*/
+@import "include/footer";
+
+/*SIDEBAR
+-------------------------------------------------*/
+@import "include/sidebar";
+
+/*TOP-SLIDER (used owl.carousel plugin)
+-------------------------------------------------*/
+@import "include/inc-top-slider";
+
+/*SERVICES-INFO
+-------------------------------------------------*/
+@import "include/inc-services-info";
+
+/*SAMPLES
+-------------------------------------------------*/
+@import "include/inc-samples";
+
+/*SERVICES-SLIDER (used owl.carousel plugin)
+-------------------------------------------------*/
+@import "include/inc-services-slider";
+
+/*COUNTERS
+-------------------------------------------------*/
+@import "include/inc-counters";
+
+/*SERVICE-DESC
+-------------------------------------------------*/
+@import "include/inc-service-desc";
+
+/*WRITERS-SLIDER
+-------------------------------------------------*/
+@import "include/inc-writers-slider";
+
+/*TESTIMONIALS + SLIDER (used owl.carousel plugin)
+-------------------------------------------------*/
+@import "include/inc-testimonials";
+
+/*CONTENT-ACCORDION
+-------------------------------------------------*/
+@import "include/inc-content-accordion";
+
+/*ORDER-STEPS
+-------------------------------------------------*/
+@import "include/inc-order-steps";
+
+/*DISCOUNT
+-------------------------------------------------*/
+@import "include/inc-discount";
+
+/*TOP-BLOCK (for inner pages)
+-------------------------------------------------*/
+.top-block {
+	min-height: 380px;
+	padding: 120px 0 30px;
+	background: #222 url(img/top-slider/1.jpg) no-repeat 50% 0;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&__title {
+		margin-bottom: 15px;
+		font-size: 30px;
+		color: #fff;
+		text-align: center;
+	}
+	&__text {
+		font-size: 14px;
+		color: #fff;
+		text-align: center;
+	}
+	@media (min-width: @min-md) {
+		&__title {font-size: 50px;}
+	}
+}
+
+/*PAGE: PRICES
+-------------------------------------------------*/
+.prices {padding-bottom: 40px;}
+/*PRICES-INFO*/
+.prices-info {
+	.services-info;
+}
+
+/*PAGE: GUARANTEES
+-------------------------------------------------*/
+.top-block {
+	.services-info {
+		padding: 0;
+		&__title, &__text {color: #fff;}
+		@media (min-width: @min-sm) {
+			&__item {padding: 0}
+		}
+	}
+}
+
+/*PAGE GUARANTEES: TEXT BLOCK*/
+@import "include/inc-guarantees";
+
+/*PAGE: WRITERS
+-------------------------------------------------*/
+/*PAGE WRITERS: TEXT BLOCK 1*/
+.writers-info-1 {
+	.text-wrap {
+		padding: 40px 0 60px;
+		ul {
+			max-width: 520px;
+			font-size: 18px;
+			color: #727272;
+		}
+		p {
+			font-size: 14px;
+			line-height: 1.66;
+			text-align: justify;
+			text-align-last: center;
+			color: #929292;
+		}
+	}
+}
+
+/*PAGE WRITERS: TEXT BLOCK 2*/
+.writers-info-2 {
+	.text-wrap {
+		padding: 40px 0 20px;
+		p {
+			max-width: 920px;
+			margin: 0 auto 30px;
+			font-size: 16px;
+			text-align: center;
+			color: #929292;
+			line-height: 1.875;
+		}
+	}
+	&__features {
+		margin: 0;
+		padding: 0;
+		font-size: 0;
+		counter-reset: li;
+		&-item {
+			list-style-type: none;
+			display: block;
+			max-width: 360px;
+			margin: 30px auto;
+			padding: 50px 30px;
+			background: #f7f8fa;
+			font-size: 14px;
+			text-align: center;
+			color: #929292;
+			&:before {
+				content: counter(li, decimal-leading-zero);
+				counter-increment: li;
+				display: block;
+				margin-bottom: 15px;
+				color: @c1;
+				font-size: 50px;
+				line-height: 1;
+				font-weight: 700;
+				background: -webkit-linear-gradient(#79b4a1, @c1);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+		}
+		@media (min-width: @min-sm) {
+			display: flex;
+			margin: 0 -1.5%;
+			&-item {
+				display: inline-block;
+				vertical-align: top;
+				width: 30.33%;
+				margin: 20px 1.5% 50px 1.5%;
+			}
+		}
+	}
+
+}
+
+/*PAGE WRITERS: TEXT BLOCK 3*/
+.writers-info-3 {
+	.text-wrap {
+		padding: 40px 0 20px;
+		p {
+			margin-bottom: 40px;
+			font-size: 18px;
+			line-height: 1.66;
+			text-align: justify;
+			color: #929292
+		}
+	}
+	.img-wrap {text-align: center;}
+	@media (min-width: @min-md) {
+		.valign {
+			display: flex;
+			align-items: center;
+		}
+	}
+}
+
+/*PAGE: WHY-US
+-------------------------------------------------*/
+/*SERVICES-TABS*/
+@import "include/inc-services-tabs";
+
+/*PAGE WHY-US: TEXT BLOCK*/
+.why-us {
+	padding-bottom: 60px;
+	.section-title {margin-bottom: 80px;}
+	.guarantees-list;
+}
+
+/*PAGE: HOW IT WORKS
+-------------------------------------------------*/
+.how-it-works {
+	padding: 60px 0 40px;
+}
+
+/*PAGE: BLOG
+-------------------------------------------------*/
+@import "include/tpl-blog";
+
+/*PAGE: 404
+-------------------------------------------------*/
+@import "include/tpl-404";
+
+/*CUSTOM SCROLLBAR
+-------------------------------------------------*/
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+	background: #222;
+}
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+	background: @c2;
+}
+
+/*NEWCRM PRICES WIDGET (FIX)
+-------------------------------------------------*/
+.prices .container.pricing-tables {
+	max-width: 100%;
+}

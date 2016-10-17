@@ -1,0 +1,55 @@
+.samples {
+	.section-title {margin-bottom: 80px;}
+	padding-bottom: 40px;
+	&__item {
+		max-width: 360px;
+		margin: 0 auto 30px;
+		padding: 30px 15px;
+		background: @c4;
+		box-shadow: 0 0 20px #bbb;
+		overflow: hidden;
+	}
+	&__link {
+		max-width: 120px;
+		margin: 0 auto 30px;
+		text-align: center;
+		&-img {
+			display: block;
+			margin-bottom: 5px;
+		}
+		&-text {
+			display: block;
+			font-size: 18px;
+			font-weight: 400;
+			color: @c2;
+			&:after {
+				content: '\e801';
+				font-family: fontello;
+				font-size: 16px;
+				margin-left: 5px;
+			}
+		}
+	}
+	&__desc {
+		text-align: center;
+	}
+	&__title {
+		margin-bottom: 15px;
+		font-size: 20px;
+		text-transform: uppercase;
+		text-align: center;
+		color: #666;
+	}
+	&__text {
+		font-size: 14px;
+		color: #666;
+		text-align: justify;
+	}
+	@media(min-width: @min-sm) {
+		&__item {
+			max-width: 560px;
+			min-height: 240px;
+			padding: 60px 30px 30px;
+		}
+	}
+}

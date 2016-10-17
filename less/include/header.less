@@ -1,0 +1,183 @@
+/*HEADER: LAYOUT*/
+.header {
+	flex-shrink: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	padding: 12px 0;
+	border-color: #fff;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+	background-color: #222;
+	background-color: rgba(0, 0, 0, 0.8);
+	transition: 0.25s;
+	.page-template &, .home & {
+		background-color: transparent;
+	}
+	&.animated {
+		padding: 5px 0;
+		border-color: #000;
+		background-color: #222;
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+	.valign {
+		display: flex;
+		align-items: center;
+	}
+	&.mmenu-open {background: rgba(0, 0, 0, 0.8);}
+}
+
+/*HEADER: LOGO*/
+.header__logo {
+	a {
+		color: #eee;
+		&:hover, &:active, &:focus {color: @c1;}
+	}
+}
+
+/*HEADER: HEADER-PHONE*/
+.header__phone {
+	display: none;
+	@media (min-width: @min-sm) {display: block;}
+}
+
+/*HEADER: SIGN-IN BUTTON*/
+.login-btn() {
+	padding: 5px 15px;
+	border: 2px solid #eee;
+	font-size: 12px;
+	text-transform: uppercase;
+	border-radius: 30px;
+	color: #eee;
+	text-decoration: none;
+	&:hover, &:active, &:focus {
+		background: @c1;
+		border-color: @c1;
+		color: #fff;
+		text-decoration: none;
+	}
+	&-wrap {float: right;}
+}
+
+/*fix NewCRM login-tooltip*/
+.login-btn-wrap #of-widgets-login-tooltip {
+	.of-widgets-open-tooltip {
+	.login-btn;
+		font-family: Roboto, sans-serif;
+		background-color: transparent;
+		&:hover, &:active, &:focus {opacity: 1;}
+	}
+	.of-widgets-login-popup {
+		right: 0;
+	}
+}
+
+/*HEADER: NAV*/
+.nav {
+	ul {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	a {
+		padding: 5px;
+		font-size: 12px;
+	}
+}
+.nav, .mobile-nav {
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		list-style-type: none;
+		display: inline-block;
+	}
+	a {
+		display: inline-block;
+		text-transform: uppercase;
+		color: #eee;
+	}
+	a:hover, a:active, a:focus,
+	.current-menu-item a,
+	.current_page_item a {color: @c1;}
+}
+.mobile-nav {
+	display: none;
+	&-visible {
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+/*HEADER: ORDER BUTTON*/
+.nav a[href*="/order"] {
+	padding: 8px 18px;
+	font-size: 12px;
+	text-transform: uppercase;
+	border-radius: 30px;
+	background: @c1;
+	color: #eee;
+	text-decoration: none;
+	&:hover, &:active, &:focus {
+		color: #fff;
+		text-decoration: none;
+	}
+}
+
+/*HEADER: SLICKNAV MENU*/
+.slicknav {
+	&_menu {
+		display: inline-block;
+		vertical-align: middle;
+		overflow: hidden;
+		padding-right: 15px;
+	}
+	&_open .slicknav_icon-bar{background: #fff;}
+	&_btn {
+		float: right;
+		font: 700 16px/20px Arial, sans-serif;
+		z-index: 10000000;
+	}
+	&_menutxt, &_icon {
+		float: left;
+	}
+	&_menutxt {
+		display: none;
+	}
+	&_icon-bar {
+		display: block;
+		font: 700 16px/20px Arial, sans-serif;
+		width: 1.5em;
+		height: 0.125em;
+		margin: 3px;
+		background: #eee;
+	}
+	&_nav {
+		position: absolute;
+		left: 0;
+		top: 100%;
+		z-index: 10;
+		width: 100%;
+		padding: 30px 0;
+		clear: both;
+		background: lighten(@c3, 10%);
+		background: rgba(0, 0, 0, 0.75);
+		border-bottom: 2px solid #000;
+		text-transform: uppercase;
+		text-align: center;
+		overflow: auto;
+		ul {margin: 0}
+		li {display: block;}
+		a {
+			font-size: 16px;
+			padding: 10px;
+		}
+	}
+}
+
+@media (max-width: @max-lg) {
+	.mobile-nav {display: block;}
+	.nav {display: none;}
+}

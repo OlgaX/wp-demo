@@ -1,0 +1,22 @@
+.discount {
+	padding: 100px 0;
+	height: 370px;
+	background: url(img/bg-discount.jpg) 50% 50%;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	&__title {
+		margin-bottom: 30px;
+		font-size: 30px;
+		color: #fff;
+	}
+	@media (min-width: @min-sm) {
+		&__title {
+			font-size: 50px;
+		}
+		.big-btn {
+			width: 100%;
+			max-width: 350px;
+		}
+	}
+}

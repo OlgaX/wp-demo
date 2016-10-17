@@ -1,0 +1,64 @@
+/*BUTTONS: BIG-BTN*/
+.big-btn {
+	max-width: 290px;
+	min-width: 160px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 14px 28px;
+	border: 2px solid @c3;
+	background: @c3;
+	color: #fff;
+	transition: all 0.2s ease;
+	font-size: 16px;
+	line-height: 1.25;
+	font-weight: 400;
+	font-family:  Roboto, sans-serif;
+	text-transform: uppercase;
+	border-radius: 30px;
+	&:hover, &:active, &:focus {
+		background: darken(@c3, 5%) !important;
+		border-color: darken(@c3, 5%) !important;
+		color: #fff !important;
+	}
+	@media (min-width: @min-sm) {
+		padding: 17px 34px;
+		min-width: 300px;
+		max-width: none;
+		font-size: 18px;
+	}
+}
+
+/*BUTTONS: MORE-LINK (modified "big-btn")*/
+.more-btn {
+		padding: 5px 10px;
+		font-size: 16px;
+		min-width: inherit;
+	&-wrap {
+		text-align: right;
+		line-height: 1;
+	}
+}
+
+/*BUTTONS: PAGE SCROLL-TOP
+-------------------------------------------------*/
+.scroll-button {
+	@size: 40px;
+	position: fixed;
+	z-index: 1;
+	right: 20px;
+	bottom: 60px;
+	width: @size;
+	height: @size;
+	text-align: center;
+	color: darken(@c1, 15%);
+	cursor: pointer;
+	transition: 0.3s;
+	opacity: 0.5;
+	border: 1px solid darken(@c1, 15%);
+	border-radius: 5px;
+	&:hover, &:active, &:focus {opacity: 1;}
+	&:before {
+		content: "\e802";
+		font: 24px/@size 'fontello';
+	}
+}
